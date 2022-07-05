@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Social Network API</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="flex-column justify-space-around">
+            <header class="display-flex justify-space-between align-center p-2">
+                <h1 class="title-header">
+                    <span>Social Network</span>
+                </h1>
+                <nav>
+                    <!-- Conditionally render login or logout links -->
+                    <!-- {{#if logged_in}} -->
+                    <a href="/profile">profile</a> |
+                    <button class="no-button" id="logout">logout</button>
+                    <!-- {{else}} -->
+                    <a href="/login">login</a>
+                    <!-- {{/if}} -->
+                </nav>
+            </header>
+            <main class="container container-fluid mt-5">
+                <h2>Log into your account</h2>
+                <form action="action_page.php" method="post">
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                      <button type="submit">Login</button>
+                      <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                      </label>
+                    </div>
+                  
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn">Cancel</button>
+                      <span class="psw">Not a Member? <a href="#">Create New User</a></span>
+                    </div>
+                  </form>
+            </main>
+            <footer>
+                <h6>2022 Anita Chengalva</h6>
+            </footer>
+        </div>
+    
+        <!-- Render script for logged in users only -->
+        <!-- {{#if logged_in}} -->
+        <script src="/js/logout.js"></script>
+        <!-- {{/if}} -->
+    </body>
+    </html>
