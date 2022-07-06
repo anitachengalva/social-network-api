@@ -5,4 +5,8 @@ router.use('/api', apiRoutes);
 
 router.use((req, res) => res.send('Wrong route!'));
 
+router.get('/',function(req,res){
+    res.render('login')
+})
+
 module.exports = router;

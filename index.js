@@ -1,11 +1,14 @@
 const express = require('express');
+const exphbs = require('express-handlebars')
 const db = require('./config/connection');
 const routes = require('./routes');
+
 
 const cwd = process.cwd();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+app.set('view engine','handlebars')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,6 +16,6 @@ app.use(routes);
 
 db.once('open', () => {
     app.listen(PORT, () => {
-        console.log(`API server for ${activity} running on port ${PORT}!`);
+        console.log(`API server for social media network running on port ${PORT}!`);
     });
 });

@@ -7,4 +7,4 @@ router.use('/users', usersRoutes);
 
 module.exports = router;
 
-// change routes correspondingly
+// is routes.use correct here?

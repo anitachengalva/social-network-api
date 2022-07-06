@@ -3,7 +3,7 @@ const { Schema, Types } = require('mongoose');
 const thoughtSchema = new Schema(
     {
         thoughtID: {
-            type: Schema.Types.ObjectID(),
+            type: Schema.Types.ObjectID,
         },
         thoughtText: {
             type: String,
@@ -32,6 +32,7 @@ const thoughtSchema = new Schema(
     }
 );
 
+const Thought = model('thought', thoughtSchema);
 module.exports = thoughtSchema;
 
 // * `thoughtText`
