@@ -1,7 +1,7 @@
-// Seed Database
 [
     {
         "username": "user",
+        "email": "user@email.com",
         "password": "password"
     }
 ]

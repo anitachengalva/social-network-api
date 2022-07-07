@@ -6,5 +6,3 @@ router.use('/thoughts', thoughtsRoutes);
 router.use('/users', usersRoutes);
 
 module.exports = router;
-
-// is routes.use correct here?
