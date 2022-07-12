@@ -1,20 +1,26 @@
 const router = require('express').Router()
 const { Thought } = require('../../models/Thought.js');
 
-router.get('/',async function(req,res){
-    try{
-        let thoughtData = await Thought.find({})
+const {
+    getThoughts,
+    getSingleThought,
+    createThought,
+    updateThought,
+    deleteThought,
+} = require('../../controllers/thoughtController.js');
 
-        res.json({data:thoughtData})
-    }catch(error){
-        console.error(error)
-    }
-})
-// **`/api/thoughts`**
+// /api/thoughts
+router.route('/').get(getThoughts).post(createThought);
 
-// * `GET` to get all thoughts
+// /api/thoughts/:thoughtId
+router
+    .route('/:thoughtId')
+    .get(getSingleThought)
+    .post(createThought)
+    .put(updateThought)
+    .delete(deleteThought);
 
-// * `GET` to get a single thought by its `_id`
+module.exports = router;
 
 // * `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field)
 
@@ -38,5 +44,3 @@ router.get('/',async function(req,res){
 // * `POST` to create a reaction stored in a single thought's `reactions` array field
 
 // * `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
-
-module.exports = router
