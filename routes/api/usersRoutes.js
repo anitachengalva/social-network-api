@@ -1,6 +1,28 @@
 const router = require('express').Router();
 const { User } = require('../../models/User.js');
 
+const {
+  getUsers,
+  getSingleUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require('../../controllers/userController.js');
+
+// /api/users
+router.route('/').get(getUsers).post(createUser);
+
+// /api/users/:userId
+router
+  .route('/:userId')
+  .get(getSingleUser)
+  .post(createUser)
+  .put(updateUser)
+  .delete(deleteUser);
+
+module.exports = router;
+
+// work with Tutor
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
