@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const { User } = require('../../models/User.js');
+const router = require("express").Router();
+const { User } = require("../../models/User.js");
 
 const {
   getUsers,
@@ -9,14 +9,14 @@ const {
   deleteUser,
   addFriend,
   deleteFriend,
-} = require('../../controllers/userController.js');
+} = require("../../controllers/userController.js");
 
 // /api/users
-router.route('/').get(getUsers).post(createUser);
+router.route("/").get(getUsers).post(createUser);
 
 // /api/users/:userId
 router
-  .route('/:userId')
+  .route("/:userId")
   .get(getSingleUser)
   .post(createUser)
   .put(updateUser)
@@ -24,14 +24,14 @@ router
 
 // /api/users/:userId/friends/:friendId
 router
-  .route('/api/users/:userId/friends/:friendId')
+  .route("/api/users/:userId/friends/:friendId")
   .post(addFriend)
   .delete(deleteFriend);
 
 module.exports = router;
 
 //
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -46,14 +46,14 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: "Incorrect email or password, please try again" });
       return;
     }
 
@@ -62,23 +62,22 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: "Incorrect email or password, please try again" });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
 
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
