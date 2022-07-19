@@ -18,13 +18,12 @@ router.route("/").get(getUsers).post(createUser);
 router
   .route("/:userId")
   .get(getSingleUser)
-  .post(createUser)
   .put(updateUser)
   .delete(deleteUser);
 
 // /api/users/:userId/friends/:friendId
 router
-  .route("/api/users/:userId/friends/:friendId")
+  .route("/:userId/friends/:friendId")
   .post(addFriend)
   .delete(deleteFriend);
 
