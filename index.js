@@ -1,5 +1,5 @@
 const express = require('express');
-const exphbs = require('express-handlebars')
+// const exphbs = require('express-handlebars')
 const db = require('./config/connection');
 const routes = require('./routes');
 
