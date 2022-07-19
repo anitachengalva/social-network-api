@@ -20,9 +20,15 @@ router
   .put(updateUser)
   .delete(deleteUser);
 
+// /api/users/:userId/friends/:friendId
+router
+  .route('/api/users/:userId/friends/:friendId')
+  .post(addFriend)
+  .delete(deleteFriend);
+
 module.exports = router;
 
-// 
+//
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -81,11 +87,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
-
-
-// **`/api/users/:userId/friends/:friendId`**
-
-// * `POST` to add a new friend to a user's friend list
-
-// * `DELETE` to remove a friend from a user's friend list
