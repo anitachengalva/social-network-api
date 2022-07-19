@@ -58,10 +58,10 @@ module.exports = {
   addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $push: { reaction: body } },
-      { new: true }
+      { $push: { reaction : body } },
+      { runValidators: true, new: true }
     )
-      .populate({ path: "reaction", select: "-__v" })
+      .populate({ path: "reactions", select: "-__v" })
       .select("-__v")
       .then((thought) => {
         !thought
