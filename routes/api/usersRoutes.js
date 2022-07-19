@@ -22,7 +22,7 @@ router
 
 module.exports = router;
 
-// work with Tutor
+// 
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
