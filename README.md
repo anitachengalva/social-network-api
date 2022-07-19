@@ -31,7 +31,9 @@ SO THAT my website can handle large amounts of unstructured data
 
 ## Installation and Usage
 
-To use this API, you will want to fork this GitHub repository containing the back-end code. From there, you will need to perform a git clone operation on the forked repository to bring it to your local machine.   
+To use this API, you need a front-end.    
+
+First, fork this GitHub repository containing the back-end code. From there, you will need to perform a git clone operation on the forked repository to bring it to your local machine.   
 
 This code should be placed at the root of your Social Network project file structure, while you work on front-end code contained in a `views` and `public` folder at the same level.    
 
