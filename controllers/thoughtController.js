@@ -4,7 +4,9 @@ const { User, Thought } = require("../models");
 module.exports = {
   // get all thoughts
   getThoughts(req, res) {
-    Thought.find().then((thought) => res.status(500).json(err));
+    Thought.find({}).then((thought) => res.json(thought)).catch((error)=>{
+      console.error(error);
+    res.json(error)});
   },
   // get a single thought by ID
   getSingleThought(req, res) {
