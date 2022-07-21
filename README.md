@@ -15,7 +15,7 @@ Seed data has been created for the sake of demonstrating functionality when test
 - [User Story](#user-story)
 - [Installation and Usage](#installation-and-usage)
 - [Technologies Utilized](#technologies-utilized)
-- [Screenshots and Walkthrough](#screenshots-and-walkthrough)
+- [Walkthrough](#walkthrough)
 - [Contributors](#contributors)
 - [License](#license)
 
@@ -31,6 +31,8 @@ SO THAT my website can handle large amounts of unstructured data
 
 ## Installation and Usage
 
+In order to run the application, ensure that firstly you have Node.js installed and have an account with [MongoDB](https://www.npmjs.com/package/mongodb). Then, while in the root of your file structure, run `npm init -y` in your Command Line Interface (CLI) to initialize your local directory. Then run `npm i` to install all relavent node package dependancies. Lastly, entering `npm run start` to the CLI should run the application. In a seperate terminal (again at your root), run `mongod` concurrently to run the server. The launched API can be viewed by either entering `http://localhost:3001/` in your browser or [Insomnia](https://insomnia.rest/products/insomnia), followed by the relevant API route.
+
 To use this API, you need a front-end.    
 
 First, fork this GitHub repository containing the back-end code. From there, you will need to perform a git clone operation on the forked repository to bring it to your local machine.   
@@ -44,9 +46,7 @@ You will also need to include a `.env` file with your [MongoDB](https://www.npmj
 node_modules
 .DS_store
 .env
-```
-
-In order to run the application, ensure that firstly you have Node.js installed. Then, while in the root of your file structure, run `npm init -y` in your Command Line Interface (CLI) to initialize your local directory. Then run `npm i` to install all relavent node package dependancies. Lastly, entering `npm run start` to the CLI should launch the server.     
+```   
 
 
 ## Technologies Utilized
@@ -63,7 +63,9 @@ In order to run the application, ensure that firstly you have Node.js installed.
 > [Insomnia](https://insomnia.rest/products/insomnia)
 
 
-## Screenshots and Walkthrough
+## Walkthrough
+
+[![walkthrough-demo](utils/img/18thumbnail.jpg)]({https://drive.google.com/file/d/1R956JZx-0g-qMl-b1AwuEzexuCGdvN-k/view} "Walkthrough - Application Demo")
 
 ## Contributors
 
