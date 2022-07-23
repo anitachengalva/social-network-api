@@ -66,6 +66,7 @@ node_modules
 ## Walkthrough
 
 [![walkthrough-demo](utils/img/18thumbnail.jpg)]({https://drive.google.com/file/d/1R956JZx-0g-qMl-b1AwuEzexuCGdvN-k/view} "Walkthrough - Application Demo")
+[Walkthrough - Application Demo](https://drive.google.com/file/d/1R956JZx-0g-qMl-b1AwuEzexuCGdvN-k/view)
 
 ## Contributors
 
