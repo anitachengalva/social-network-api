@@ -5,7 +5,7 @@
 
 This project is an API for social network web applications. This API allows users to share their thoughts, react to friends’ thoughts, and create a friend list.
 
-Purely utilizing back-end programming, [Express.js](https://www.npmjs.com/package/express) is used for routing, [MongoDB](https://www.npmjs.com/package/mongodb) for a NoSQL database, and [Mongoose](https://www.npmjs.com/package/mongoose) packages for Object Data Modeling (ODM) and to create a connection between MongoDB and the Node.js Javascipt.
+Purely utilizing back-end programming, [Express.js](https://www.npmjs.com/package/express) is used for routing, [MongoDB](https://www.npmjs.com/package/mongodb) as a NoSQL database, and [Mongoose](https://www.npmjs.com/package/mongoose) package for Object Data Modeling (ODM) and to create a connection between MongoDB and the Node.js Javascipt.
 
 Seed data has been created for the sake of demonstrating functionality when testing the API in [Insomnia](https://insomnia.rest/products/insomnia).
 
